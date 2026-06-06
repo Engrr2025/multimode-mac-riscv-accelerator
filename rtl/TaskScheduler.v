@@ -50,7 +50,7 @@ module TaskScheduler (
         .Overflow(Overflow_16x16)
     );
 
-    // Task scheduling logic
+    
     always @(*) begin
         Error_Flag = 1'b0;       // Default no error
         TS_Overflow_Flag = 1'b0; // Default no overflow from TaskScheduler
