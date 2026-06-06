@@ -178,11 +178,7 @@ module axi_mm_mac_if #(
                 if (S_AXI_WVALID && !write_pipe_valid) begin
                     S_AXI_WREADY <= 1'b1;
 
-                    // *** Removed duplicate assignments that caused multiple drivers ***
-                    //     pipe_wdata       <= S_AXI_WDATA;
-                    //     pipe_addr        <= awaddr_latched[7:0];
-                    //     pipe_wstrb       <= S_AXI_WSTRB;
-                    //     write_pipe_valid <= 1'b1;
+                    
 
                     if (S_AXI_WLAST || (write_counter == awlen_latched)) begin
                         wstate <= W_RESP;
@@ -198,7 +194,7 @@ module axi_mm_mac_if #(
             W_RESP: begin
                 S_AXI_WREADY <= 1'b0;
                 S_AXI_BVALID <= 1'b1;
-                S_AXI_BRESP  <= 2'b00; // OKAY
+                S_AXI_BRESP  <= 2'b00; 
                 S_AXI_BID    <= awid_latched;
                 if (S_AXI_BREADY && S_AXI_BVALID) begin
                     S_AXI_BVALID <= 1'b0;
@@ -267,7 +263,7 @@ module axi_mm_mac_if #(
     end
 
     //-------------------------------------------------------------------------
-    // 3) Read-side FSM (unchanged)
+    // 3) Read-side FSM 
     //-------------------------------------------------------------------------
     reg [1:0] rstate;
     localparam R_IDLE = 2'd0,
