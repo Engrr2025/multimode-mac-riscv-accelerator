@@ -170,9 +170,9 @@ Planned directions for the next revision:
 
 ## Authors
 
-Junaid Khalid — Design / FPGA / Verification Engineer · GitHub: [@Engrr2025](https://github.com/Engrr2025)
+Junaid Khalid -- Design / FPGA / Verification Engineer · GitHub: [@Engrr2025](https://github.com/Engrr2025)
 
-Ahsan Abbas Kazmi - Co-author
+Ahsan Abbas Kazmi -- Co-author
 
 Final Year Project, Department of Electrical and Computer Engineering, COMSATS University Islamabad (Wah Campus), 2025. Supervised by Engr. Muhammad Ali and Prof. Dr. Nadia Nawaz Qadri.
 
