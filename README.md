@@ -164,7 +164,6 @@ Planned directions for the next revision:
 - **A native 32-bit AXI data path** (or explicit byte-lane steering) for direct integration without relying on bus width conversion.
 - **A streaming / DMA front end**, letting the accelerator process whole vectors autonomously to target convolution and dot-product workloads.
 
-Testbenches are available on request.
 
 
 ---
