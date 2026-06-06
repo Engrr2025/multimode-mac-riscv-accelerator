@@ -87,7 +87,7 @@ module mac_axi4_top #(
     wire        mac_Overflow_Flag;
 
     // -------------------------------------------------------------------
-    // Fixed AXI-slave wrapper for the MAC
+    //  AXI-slave wrapper for the MAC
     // -------------------------------------------------------------------
     axi_mm_mac_if #(
         .C_S_AXI_ADDR_WIDTH (C_S_AXI_ADDR_WIDTH),
@@ -157,7 +157,7 @@ module mac_axi4_top #(
     );
 
     // -------------------------------------------------------------------
-    // MultiMode_MAC core (unchanged)
+    // MultiMode_MAC core 
     // -------------------------------------------------------------------
     MultiMode_MAC u_multimode_mac (
         .clk                (S_AXI_ACLK),
