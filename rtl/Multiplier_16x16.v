@@ -19,9 +19,6 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-//-----------------------
-// 16x16 Multiplier (Corrected)
-//-----------------------
 module Multiplier_16x16 (
     input  wire [15:0] A,            // 16-bit multiplicand
     input  wire [15:0] B,            // 16-bit multiplier
