@@ -155,16 +155,17 @@ RTL design (Verilog, SystemVerilog) · digital arithmetic (hierarchical multipli
 
 ---
 
-## Limitations and future work
+## Roadmap
 
-Stated honestly, because the next version is where the real design judgment lives:
+Planned directions for the next revision:
 
-- **All four multipliers are currently always instantiated and active.** The mode mux selects one output, but the unused datapaths still consume switching power. The clearest next step is operand isolation or clock gating on the inactive multipliers so the runtime-precision choice actually translates into power savings.
-- **Single 16x16 datapath is redundant by construction.** Since the 16x16 already contains every smaller multiplier internally, a future revision could expose those internal sub-products instead of instantiating separate top-level blocks, reducing area.
-- **The AXI wrapper is configured for a 64-bit data bus but services the low 32-bit lane.** It works behind a Xilinx SmartConnect that handles width conversion. A native version should either narrow the data width to 32 bits or add explicit byte-lane steering.
-- **Access is one operation per bus round trip.** Adding a small streaming or DMA front end would let the accelerator process vectors autonomously, which is the natural path toward real convolution and dot-product workloads.
+- **Per-mode clock gating and operand isolation**, so the runtime precision selection translates into measurable dynamic-power savings on the inactive datapaths.
+- **Datapath reuse across modes** by exposing the sub-products already present inside the 16x16 hierarchy, for a smaller area footprint.
+- **A native 32-bit AXI data path** (or explicit byte-lane steering) for direct integration without relying on bus width conversion.
+- **A streaming / DMA front end**, letting the accelerator process whole vectors autonomously to target convolution and dot-product workloads.
 
 Testbenches are available on request.
+
 
 ---
 
